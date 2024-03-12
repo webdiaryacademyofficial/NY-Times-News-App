@@ -23,10 +23,14 @@ a {
 
 // Global classes
 .grid {
-  display: grid;
+  @media (min-width: 768px) {
+    display: grid;
+  }
 }
 .flex {
-  display: flex;
+  @media (min-width: 768px) {
+    display: flex;
+  }
 }
 .flex-between {
   justify-content: space-between;
@@ -51,8 +55,12 @@ a {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
+  padding: 0 40px;
+  @media (min-width: 768px) {
+    padding: 0 80px;
+  }
 }
 
 .loader {
@@ -79,6 +87,7 @@ nav {
   }
 }
 
+// News card style
 .news-card {
   margin-top: 30px;
   grid-template-columns: 1fr 5fr;
@@ -106,9 +115,15 @@ nav {
 
   &-media {
     img {
-      width: 205px;
-      height: 136px;
+      width: 100%;
+      height: 200px;
+      margin-top: 20px;
       object-fit: cover;
+      @media (min-width: 768px) {
+        width: 205px;
+        height: 136px;
+        margin-top: 0;
+      }
     }
   }
 

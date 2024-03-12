@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "../Container/Container";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -9,14 +10,14 @@ const Navbar = () => {
           <img src="NewYorkTimes.png" alt="Logo" />
         </div>
         <ul className="navbar flex gap-30">
-          <li >
-            <a href="#">Home</a>
+          <li>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <Link to="#">Contact</Link>
           </li>
         </ul>
       </nav>
