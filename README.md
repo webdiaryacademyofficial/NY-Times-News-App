@@ -44,3 +44,8 @@ npm start
 npm build
 ```
 
+6. Test
+```bash
+npm run test
+```
+

@@ -14,7 +14,7 @@ const useFetch = (url, method = "get") => {
     };
 
     fetchData();
-  }, []);
+  }, [url]);
 
   return { loading, data };
 };

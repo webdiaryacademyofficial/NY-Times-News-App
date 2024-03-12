@@ -8,10 +8,16 @@ const Navbar = () => {
         <div className="logo">
           <img src="NewYorkTimes.png" alt="Logo" />
         </div>
-        <ul className="navbar flex gap-20">
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+        <ul className="navbar flex gap-30">
+          <li >
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
         </ul>
       </nav>
     </Container>
