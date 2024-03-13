@@ -1,6 +1,8 @@
 import React from "react";
 
 const NewsCard = ({ news }) => {
+  if(!news) return null
+  
   const { title, published_date, abstract, media, url } = news;
 
   return (
