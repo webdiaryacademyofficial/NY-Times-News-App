@@ -10,21 +10,28 @@ const APP_KEY = process.env.REACT_APP_KEY;
 const Home = () => {
   const { loading, data, error } = useFetch(`${MOST_POPULAR_URL}${APP_KEY}`);
 
-  return (
-    <>
+  if (loading) {
+    return (
       <Container>
         <Loader loading={loading} />
-        {error ? (
-          <h2>{error}</h2>
-        ) : data && data.results ? (
-          data.results.map((news) => (
-            <NewsCard key={news.asset_id} news={news} />
-          ))
-        ) : (
-          <h2>No data found</h2>
-        )}
       </Container>
-    </>
+    );
+  }
+
+  if (error || !data || !data?.results || data?.results.length === 0) {
+    return (
+      <Container>
+        <h2>No data found</h2>
+      </Container>
+    );
+  }
+
+  return (
+    <Container>
+      {data.results.map((news) => (
+        <NewsCard key={news.asset_id} news={news} />
+      ))}
+    </Container>
   );
 };
 
