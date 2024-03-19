@@ -107,7 +107,7 @@ nav .navbar li {
 .news-card-content p {
   margin-top: 10px;
 }
-.news-card-media img {
+.news-card-media img, .news-card-media svg {
   width: 100%;
   height: 200px;
   margin-top: 20px;
@@ -115,7 +115,7 @@ nav .navbar li {
      object-fit: cover;
 }
 @media (min-width: 768px) {
-  .news-card-media img {
+  .news-card-media img, .news-card-media svg {
     width: 205px;
     height: 136px;
     margin-top: 0;

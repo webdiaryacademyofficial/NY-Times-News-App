@@ -1,9 +1,13 @@
 import React from "react";
+import { Placeholder } from "../Icons/Placeholder";
 
 const NewsCard = ({ news }) => {
-  if(!news) return null
-  
+  if (!news) return null;
+
   const { title, published_date, abstract, media, url } = news;
+  const mediaMetadata = media?.[0]?.["media-metadata"] || [];
+  const mediaUrl = mediaMetadata?.[0] ? mediaMetadata[0].url : "";
+  const mediaCaption = media?.[0]?.caption || "";
 
   return (
     <a href={url}>
@@ -17,10 +21,11 @@ const NewsCard = ({ news }) => {
             <p>{abstract}</p>
           </div>
           <div className="news-card-media">
-            <img
-              src={media[0]?.["media-metadata"]?.[0]?.url}
-              alt={media[0]?.caption}
-            />
+            {mediaUrl ? (
+              <img src={mediaUrl} alt={mediaCaption} />
+            ) : (
+              <Placeholder />
+            )}
           </div>
         </article>
       </div>
